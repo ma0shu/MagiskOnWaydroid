@@ -37,7 +37,7 @@ on:
       gapps_variant:
         description: "Variants of gapps"
         required: true
-        default: "pico"
+        default: "none"
         type: choice
         options:
         - none
@@ -98,7 +98,7 @@ jobs:
             let gapps_variant = "${{ github.event.inputs.gapps_variant }}"
             switch ( gapps_variant ) {
               default:
-                matrix.gapps_variant = ["pico"];
+                matrix.gapps_variant = ["none"];
                 break;
             }
             let root_sol = "${{ github.event.inputs.root_sol }}"
